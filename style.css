@@ -1,0 +1,222 @@
+
+/* 1. General design */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    color: #25282d;
+    line-height: 1.7;
+}
+
+/* 2. Main layout */
+.page-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 3. Sidebar */
+.sidebar {
+    width: 220px;
+    min-width: 220px;
+    background-color: #e0e2e6;
+    padding: 24px 16px;
+    min-height: 100vh;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    font-size: 21px;
+}
+
+.sidebar p {
+    color: #626873;
+    margin-bottom: 22px;
+}
+
+.sidebar a {
+    display: block;
+    color: #535a64;
+    text-decoration: none;
+    margin: 14px 0;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: #202329;
+}
+
+/* 4. Main content */
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 40px 5%;
+}
+
+/* 5. Hero section */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    align-items: center;
+    gap: 45px;
+    padding: 25px 0 55px;
+    border-bottom: 1px solid #d9dce1;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 4vw, 46px);
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+.hero h2 {
+    font-size: 25px;
+    margin: 12px 0;
+}
+
+.intro {
+    color: #626873;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.description {
+    color: #626873;
+    max-width: 520px;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 24px;
+    background-color: #565c65;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #343941;
+}
+
+/* 6. Profile image */
+.hero-image {
+    text-align: center;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 280px;
+    height: 265px;
+    object-fit: cover;
+    border-radius: 16px;
+    background-color: white;
+}
+
+/* 7. Sections */
+#about,
+#projects,
+#contact {
+    padding: 35px 0;
+    border-bottom: 1px solid #d9dce1;
+}
+
+.main-content h2 {
+    font-size: 28px;
+    margin-top: 0;
+}
+
+.main-content p {
+    color: #626873;
+}
+
+/* 8. Project cards */
+.project {
+    background-color: #e5e7eb;
+    border: 1px solid #dcdfe4;
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin: 16px 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px #25282d12;
+}
+
+.project h3 {
+    margin: 0 0 4px;
+    font-size: 18px;
+}
+
+.project p {
+    margin: 0;
+}
+
+/* 9. Bottom navigation */
+nav {
+    margin-top: 10px;
+    padding: 25px 10px;
+    background-color: #e0e2e6;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+nav a {
+    color: #535a64;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #202329;
+}
+
+/* 10. Small screens */
+@media (max-width: 760px) {
+    .page-layout {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+        min-height: auto;
+        padding: 18px 22px;
+    }
+
+    .sidebar a {
+        display: inline-block;
+        margin-right: 16px;
+    }
+
+    .main-content {
+        padding: 25px 22px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .hero-image {
+        grid-row: 1;
+    }
+
+    .profile-img {
+        max-width: 220px;
+        height: 220px;
+    }
+}
